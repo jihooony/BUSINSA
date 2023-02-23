@@ -92,4 +92,65 @@ public class MemberDao {
 		}
 		return false;
 	}
-}
+		public boolean checkMemCode(String userid) {
+		      MemberVO mVo = null;
+		      String    sql ="";
+		      sql += "SELECT COUNT(*) CNT    ";     
+		      sql += "FROM   MEMBER        ";
+		      sql += "WHERE  USERID = ? ";
+		      PreparedStatement pstmt = null;
+		      ResultSet         rs    = null;
+		      try {
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, userid);
+		         rs = pstmt.executeQuery();
+		         if(rs.next()) {
+		            int cnt = rs.getInt("CNT");
+		            if(cnt > 0) {
+		               return true;
+		            }
+		         }
+		      } catch (SQLException e) {
+		         e.printStackTrace();
+		      } finally {
+		         try {
+		            if(rs    != null) rs.close();
+		            if(pstmt != null) pstmt.close();
+		         } catch (SQLException e) {
+		            e.printStackTrace();
+		         }
+		      }
+		      return false;
+		   }
+
+		   public boolean checkMemPwd(String passwd) {
+			  MemberVO mVo = null;
+		      String   sql ="";
+		      sql += "SELECT COUNT(*) CNT   ";     
+		      sql += "FROM   MEMBER       ";
+		      sql += "WHERE  PASSWD = ? ";
+		      PreparedStatement pstmt  = null;
+		      ResultSet         rs     = null;
+		      try {
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, passwd);
+		         rs = pstmt.executeQuery();
+		         if(rs.next()) {
+		            int cnt = rs.getInt("CNT");
+		            if(cnt > 0) {
+		               return true;
+		            }
+		         }
+		      } catch (SQLException e) {
+		         e.printStackTrace();
+		      } finally {
+		         try {
+		            if(rs    != null) rs.close();
+		            if(pstmt != null) pstmt.close();
+		         } catch (SQLException e) {
+		            e.printStackTrace();
+		         }
+		      }
+		      return false;
+		   }
+	}

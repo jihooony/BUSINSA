@@ -1,32 +1,31 @@
 package businsa.view;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-
-import javax.swing.JRadioButton;
-import javax.swing.JToggleButton;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import java.awt.Font;
+import businsa.model.MemberDao;
 
 public class LoginWindow extends JFrame {
 
    private JPanel contentPane;
-   private JTextField tfUsername, tfPassword;
+   private JTextField userid, passwd;
    private JButton loginBtn, joinBtn;
    private JButton btnNewButton_1;
    private JButton btnNewButton_2;
    
-
-
+   
    public LoginWindow() {
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setSize(400, 600);
@@ -38,11 +37,12 @@ public class LoginWindow extends JFrame {
       setContentPane(contentPane);
       contentPane.setLayout(null);
       
-      tfUsername = new JTextField();
-      tfUsername.setText("\uC544\uC774\uB514");
-      tfUsername.setBounds(40, 194, 303, 35);
-      contentPane.add(tfUsername);
-      tfUsername.setColumns(10);
+      userid = new JTextField();
+      userid.setText("아이디");
+      userid.setBounds(40, 194, 303, 35);
+      contentPane.add(userid);
+      userid.setColumns(10);
+      userid.getBorder();
       
       joinBtn = new JButton("회원가입");
       joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
@@ -64,19 +64,19 @@ public class LoginWindow extends JFrame {
       loginBtn.setBounds(40, 448, 303, 29);
       contentPane.add(loginBtn);
       
-      tfPassword = new JTextField();
-      tfPassword.setText("\uBE44\uBC00\uBC88\uD638");
-      tfPassword.setColumns(10);
-      tfPassword.setBounds(40, 253, 303, 35);
-      contentPane.add(tfPassword);
+      passwd = new JTextField();
+      passwd.setText("비밀번호");
+      passwd.setColumns(10);
+      passwd.setBounds(40, 253, 303, 35);
+      contentPane.add(passwd);
       
-      JRadioButton rdbtnNewRadioButton = new JRadioButton("\uC790\uB3D9 \uB85C\uADF8\uC778");
+      JRadioButton rdbtnNewRadioButton = new JRadioButton("자동로그인");
       rdbtnNewRadioButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
       rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
       rdbtnNewRadioButton.setBounds(40, 322, 107, 23);
       contentPane.add(rdbtnNewRadioButton);
       
-      JButton btnNewButton = new JButton("\uC544\uC774\uB514 | \uBE44\uBC00\uBC88\uD638 \uCC3E\uAE30");
+      JButton btnNewButton = new JButton("아이디|비밀번호찾기");
       btnNewButton.setForeground(new Color(0, 0, 0));
       btnNewButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
@@ -102,15 +102,55 @@ public class LoginWindow extends JFrame {
       btnNewButton_2.setBorderPainted(false);
       contentPane.add(btnNewButton_2);
       
-      JLabel lblNewLabel = new JLabel("<HTML>BUSINSA<br>LOGIN</HTML>",JLabel.CENTER);
-      lblNewLabel.setFont(new Font("무신사", Font.BOLD,30));
+      JLabel lblNewLabel = new JLabel("BUSINSA",JLabel.CENTER);
+      lblNewLabel.setFont(new Font("무신사", Font.BOLD,35));
       //lblNewLabel.setIcon(new ImageIcon(LoginWindow.class.getResource("file:///D:/ws/java/Businsa/src/image/KakaoTalk_20230223_101205427.png")));
-      lblNewLabel.setBounds(40, 34, 303, 133);
+      lblNewLabel.setBounds(40, 25, 303, 133);
       contentPane.add(lblNewLabel);
+      
+      JLabel lblNewLabel1 = new JLabel("로그인",JLabel.CENTER);
+      lblNewLabel1.setFont(new Font("HY견고딕", Font.BOLD,35));
+      lblNewLabel1.setBounds(40, 70, 303, 133);
+      contentPane.add(lblNewLabel1);
+      
+      
       
       
       
       setVisible(true);
+      
+      loginBtn.addKeyListener(new KeyListener() {
+          @Override
+          public void keyTyped(KeyEvent e) { }
+          @Override
+          public void keyReleased(KeyEvent e) {
+             if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+            	 loginBtn.doClick();
+             }
+          }
+          @Override
+          public void keyPressed(KeyEvent e) { }
+       });
+      
+      loginBtn.addActionListener(new ActionListener() {
+          MemberDao memDao = new MemberDao();
+          @Override
+          public void actionPerformed(ActionEvent e) {
+             if(memDao.checkMemCode(userid.getText())){
+                if(memDao.checkMemPwd(passwd.getText())) {
+                   setVisible(false);
+                   new Home();               
+                   return;
+                } else {
+                   JOptionPane.showMessageDialog(null, "패스워드가 틀렸습니다");
+                }
+             } else {
+                JOptionPane.showMessageDialog(null, "아디디가 틀렸습니다");
+                userid.grabFocus();
+             }   
+          }
+       });
+      
       //회원가입 액션
       joinBtn.addActionListener(new ActionListener() {
          
@@ -122,6 +162,6 @@ public class LoginWindow extends JFrame {
       });
    }
       public static void main(String[] args) {
-  		new LoginWindow();
+  		new Home();
   	}
 }
