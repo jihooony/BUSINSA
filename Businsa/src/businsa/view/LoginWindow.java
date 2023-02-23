@@ -38,7 +38,7 @@ public class LoginWindow extends JFrame {
       contentPane.setLayout(null);
       
       userid = new JTextField();
-      userid.setText("아이디");
+      userid.setText("");
       userid.setBounds(40, 194, 303, 35);
       contentPane.add(userid);
       userid.setColumns(10);
@@ -65,7 +65,7 @@ public class LoginWindow extends JFrame {
       contentPane.add(loginBtn);
       
       passwd = new JTextField();
-      passwd.setText("비밀번호");
+      passwd.setText("");
       passwd.setColumns(10);
       passwd.setBounds(40, 253, 303, 35);
       contentPane.add(passwd);
@@ -138,8 +138,9 @@ public class LoginWindow extends JFrame {
           public void actionPerformed(ActionEvent e) {
              if(memDao.checkMemCode(userid.getText())){
                 if(memDao.checkMemPwd(passwd.getText())) {
-                   setVisible(false);
-                   new Home();               
+                  
+                  new Home2(userid.getText());             
+                	setVisible(false);
                    return;
                 } else {
                    JOptionPane.showMessageDialog(null, "패스워드가 틀렸습니다");

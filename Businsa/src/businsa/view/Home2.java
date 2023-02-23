@@ -12,16 +12,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Home extends JFrame {
+public class Home2 extends JFrame {
 	
 	JLabel p1,p2,p3;
 	JLabel l1,l2,l3,l4;
+	String userid;
 	JButton btnlog;
 	ImageIcon i1;
 	
 	
-	public  Home() {
-		
+	public  Home2(String userid) {
+	System.out.println("1"+userid);
+	this.userid = userid;
+	
 	JFrame fr = new JFrame("HOME");
 	
 	fr.getContentPane().setLayout(null);
@@ -59,8 +62,15 @@ public class Home extends JFrame {
     l3 = new JLabel(" 빈티지 ");
     l3.setBounds(1150,600,150,30);
     
-    btnlog = new JButton("login");
-    btnlog.setBounds(625,680,200,50);
+    l4 = new JLabel(userid);
+    l4.setBounds(700,650,200,50);
+    
+  
+	System.out.println("2"+userid);
+
+    
+    btnlog = new JButton("");
+    //btnlog.setBounds(625,680,200,50);
     btnlog.setBackground(new Color(204,204,204));
     btnlog.setFont(new Font("무신사", Font.PLAIN, 20));
     
@@ -72,6 +82,7 @@ public class Home extends JFrame {
     fr.getContentPane().add(l2);
     fr.getContentPane().add(l3);
     fr.getContentPane().add(btnlog);
+    fr.getContentPane().add(l4);
     
     fr.setVisible(true);
     
@@ -123,5 +134,12 @@ p1.addMouseListener(new MouseListener() {
 
 }
 
+	
+
+	public static void main(String[] args) {
+		//new Home2("아이디");
+		
+	}
+	
 }
 

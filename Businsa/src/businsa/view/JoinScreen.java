@@ -60,9 +60,9 @@ public class JoinScreen extends JFrame {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("BUSINSA");
-		lblNewLabel.setBounds(155, 0, 300, 47);
+		lblNewLabel.setBounds(185, 0, 300, 47);
 		panel.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("무신사", Font.BOLD, 35));
+		lblNewLabel.setFont(new Font("무신사", Font.BOLD, 20));
 
 		JLabel lblNewLabel_1 = new JLabel("아이디");
 		lblNewLabel_1.setFont(new Font("HY견고딕", Font.PLAIN, 12));
