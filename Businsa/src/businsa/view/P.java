@@ -15,10 +15,12 @@ public class P extends JFrame {
 	JButton b1;
 	JLabel p1,p2,p3,p4,p5;
 	JLabel p6,p7,p8,p9,p10;
+	String userid;
 
 	
 	
-	public  P() {
+	public  P(String userid) {
+		this.userid = userid;
 		
 	JFrame fr = new JFrame("편집샵");
 	
@@ -104,7 +106,7 @@ public class P extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new Home();
+			new Home2(userid);
 			fr.setVisible(false);
 			
 		}

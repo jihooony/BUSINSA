@@ -1,6 +1,7 @@
 package businsa.view;
 
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,12 +18,10 @@ public class Home2 extends JFrame {
 	JLabel p1,p2,p3;
 	JLabel l1,l2,l3,l4;
 	String userid;
-	JButton btnlog;
 	ImageIcon i1;
 	
 	
 	public  Home2(String userid) {
-	System.out.println("1"+userid);
 	this.userid = userid;
 	
 	JFrame fr = new JFrame("HOME");
@@ -65,14 +64,6 @@ public class Home2 extends JFrame {
     l4 = new JLabel(userid);
     l4.setBounds(700,650,200,50);
     
-  
-	System.out.println("2"+userid);
-
-    
-    btnlog = new JButton("");
-    //btnlog.setBounds(625,680,200,50);
-    btnlog.setBackground(new Color(204,204,204));
-    btnlog.setFont(new Font("무신사", Font.PLAIN, 20));
     
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
@@ -81,52 +72,133 @@ public class Home2 extends JFrame {
     fr.getContentPane().add(l1);
     fr.getContentPane().add(l2);
     fr.getContentPane().add(l3);
-    fr.getContentPane().add(btnlog);
     fr.getContentPane().add(l4);
     
     fr.setVisible(true);
     
    
-btnlog.addActionListener(new ActionListener() {
+l4.addMouseListener(new MouseListener() {
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		new LoginWindow();
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		new Home();
 		fr.setVisible(false);
 		
 		
 	}
 });
 
+
 p1.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+				
 	}
 	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new B();
+		new B(userid);
+		fr.setVisible(false);
+		
+	}
+});
+
+p2.addMouseListener(new MouseListener() {
+	
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+				
+	}
+	
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		new P(userid);
+		
+		fr.setVisible(false);
+		
+	}
+});
+
+p3.addMouseListener(new MouseListener() {
+	
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+				
+	}
+	
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		new V(userid);
 		fr.setVisible(false);
 		
 	}
@@ -134,10 +206,8 @@ p1.addMouseListener(new MouseListener() {
 
 }
 
-	
-
 	public static void main(String[] args) {
-		//new Home2("아이디");
+		new Home();
 		
 	}
 	

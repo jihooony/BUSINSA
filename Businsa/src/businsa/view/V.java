@@ -16,11 +16,12 @@ public class V extends JFrame {
 	JButton b1;
 	JLabel p1,p2,p3,p4,p5;
 	JLabel p6,p7,p8,p9,p10;
+	private String userid;
 
 	
 	
-	public  V() {
-		
+	public  V(String userid) {
+		this.userid = userid;
 	JFrame fr = new JFrame("빈티지");
 	
 	fr.getContentPane().setLayout(null);
@@ -138,7 +139,7 @@ public class V extends JFrame {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new Home();
+			new Home2(userid);
 			fr.setVisible(false);
 			
 		}

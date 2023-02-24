@@ -28,7 +28,7 @@ public class LoginWindow extends JFrame {
    
    public LoginWindow() {
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      setSize(400, 600);
+      setSize(400, 500);
       setLocationRelativeTo(null);
       
       contentPane = new JPanel();
@@ -37,60 +37,48 @@ public class LoginWindow extends JFrame {
       setContentPane(contentPane);
       contentPane.setLayout(null);
       
+      JLabel lblNewLabel = new JLabel("BUSINSA",JLabel.CENTER);
+      lblNewLabel.setFont(new Font("무신사", Font.BOLD,35));
+      lblNewLabel.setBounds(40, 0, 303, 133);
+      contentPane.add(lblNewLabel);
+      
+      JLabel lblNewLabel1 = new JLabel("로그인",JLabel.CENTER);
+      lblNewLabel1.setFont(new Font("HY견고딕", Font.BOLD,25));
+      lblNewLabel1.setBounds(40, 40, 303, 133);
+      contentPane.add(lblNewLabel1);
+      
+      
       userid = new JTextField();
       userid.setText("");
-      userid.setBounds(40, 194, 303, 35);
+      userid.setBounds(40, 155, 303, 35);
       contentPane.add(userid);
       userid.setColumns(10);
       userid.getBorder();
       
-      joinBtn = new JButton("회원가입");
-      joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
-      joinBtn.setBackground(new Color(255, 255, 255));
-      joinBtn.setForeground(new Color(0, 128, 255));
-      joinBtn.setBounds(125, 487, 136, 29);
-      joinBtn.setBorderPainted(false);
-      contentPane.add(joinBtn);
-      
-      loginBtn = new JButton("로그인");
-      loginBtn.setBackground(new Color(128, 128, 128));
-      loginBtn.setForeground(new Color(255, 255, 255));
-      loginBtn.setBorderPainted(false);
-      loginBtn.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-         }
-      });
-      loginBtn.setFont(new Font("HY견고딕", Font.PLAIN, 14));
-      loginBtn.setBounds(40, 448, 303, 29);
-      contentPane.add(loginBtn);
-      
       passwd = new JTextField();
       passwd.setText("");
       passwd.setColumns(10);
-      passwd.setBounds(40, 253, 303, 35);
+      passwd.setBounds(40, 200, 303, 35);
       contentPane.add(passwd);
       
       JRadioButton rdbtnNewRadioButton = new JRadioButton("자동로그인");
       rdbtnNewRadioButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
       rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
-      rdbtnNewRadioButton.setBounds(40, 322, 107, 23);
+      rdbtnNewRadioButton.setBounds(40, 240, 107, 23);
       contentPane.add(rdbtnNewRadioButton);
       
       JButton btnNewButton = new JButton("아이디|비밀번호찾기");
       btnNewButton.setForeground(new Color(0, 0, 0));
-      btnNewButton.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-         }
-      });
+    
       btnNewButton.setBackground(new Color(255, 255, 255));
-      btnNewButton.setBounds(175, 322, 167, 23);
+      btnNewButton.setBounds(175, 240, 167, 23);
       contentPane.add(btnNewButton);
       
       btnNewButton_1 = new JButton("카카오 로그인");
       btnNewButton_1.setFont(new Font("HY견고딕", Font.PLAIN, 14));
       btnNewButton_1.setBackground(new Color(255, 204, 000));
       btnNewButton_1.setForeground(new Color(255, 255, 255));
-      btnNewButton_1.setBounds(40, 374, 303, 33);
+      btnNewButton_1.setBounds(40, 280, 303, 33);
       btnNewButton_1.setBorderPainted(false);
       contentPane.add(btnNewButton_1);
       
@@ -98,23 +86,26 @@ public class LoginWindow extends JFrame {
       btnNewButton_2.setFont(new Font("HY견고딕", Font.PLAIN, 14));
       btnNewButton_2.setBackground(new Color(051, 153, 051));
       btnNewButton_2.setForeground(new Color(255, 255, 255));
-      btnNewButton_2.setBounds(40, 411, 303, 33);
+      btnNewButton_2.setBounds(40, 320, 303, 33);
       btnNewButton_2.setBorderPainted(false);
       contentPane.add(btnNewButton_2);
       
-      JLabel lblNewLabel = new JLabel("BUSINSA",JLabel.CENTER);
-      lblNewLabel.setFont(new Font("무신사", Font.BOLD,35));
-      //lblNewLabel.setIcon(new ImageIcon(LoginWindow.class.getResource("file:///D:/ws/java/Businsa/src/image/KakaoTalk_20230223_101205427.png")));
-      lblNewLabel.setBounds(40, 25, 303, 133);
-      contentPane.add(lblNewLabel);
       
-      JLabel lblNewLabel1 = new JLabel("로그인",JLabel.CENTER);
-      lblNewLabel1.setFont(new Font("HY견고딕", Font.BOLD,35));
-      lblNewLabel1.setBounds(40, 70, 303, 133);
-      contentPane.add(lblNewLabel1);
+      loginBtn = new JButton("로그인");
+      loginBtn.setBackground(new Color(128, 128, 128));
+      loginBtn.setForeground(new Color(255, 255, 255));
+      loginBtn.setBorderPainted(false);
+      loginBtn.setFont(new Font("HY견고딕", Font.PLAIN, 14));
+      loginBtn.setBounds(40, 360, 303, 29);
+      contentPane.add(loginBtn);
       
-      
-      
+      joinBtn = new JButton("회원가입");
+      joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+      joinBtn.setBackground(new Color(255, 255, 255));
+      joinBtn.setForeground(new Color(0, 128, 255));
+      joinBtn.setBounds(125, 400, 136, 29);
+      joinBtn.setBorderPainted(false);
+      contentPane.add(joinBtn);
       
       
       setVisible(true);

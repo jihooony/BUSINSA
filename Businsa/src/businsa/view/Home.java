@@ -59,7 +59,7 @@ public class Home extends JFrame {
     l3 = new JLabel(" 빈티지 ");
     l3.setBounds(1150,600,150,30);
     
-    btnlog = new JButton("login");
+    btnlog = new JButton("LOGIN");
     btnlog.setBounds(625,680,200,50);
     btnlog.setBackground(new Color(204,204,204));
     btnlog.setFont(new Font("무신사", Font.PLAIN, 20));
@@ -115,7 +115,7 @@ p1.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new B();
+		new B(null);
 		fr.setVisible(false);
 		
 	}

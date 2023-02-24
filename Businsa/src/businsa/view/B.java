@@ -15,10 +15,11 @@ public class B extends JFrame {
 	JButton b1;
 	JLabel p1,p2,p3,p4,p5;
 	JLabel p6,p7,p8,p9,p10;
-
+	String userid;
 	
 	
-	public  B() {
+	public  B(String userid) {
+		this.userid = userid;
 		
 	JFrame fr = new JFrame("보세");
 	
@@ -96,15 +97,14 @@ public class B extends JFrame {
     fr.getContentPane().add(p7);
     fr.getContentPane().add(p8);
     fr.getContentPane().add(p9);
-    fr.getContentPane().add(p10);
-    
+    fr.getContentPane().add(p10);    
     fr.setVisible(true);
     
 b1.addActionListener(new ActionListener() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			new Home();
+			new Home2(userid);
 			fr.setVisible(false);
 			
 		}

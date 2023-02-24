@@ -1,5 +1,4 @@
 package businsa.view;
-// 이덕만
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -29,10 +28,8 @@ public class JoinScreen extends JFrame {
 	private JPanel         contentPane;
 	private JTextField     userid;
 	private JButton        btnCheckButton;
-	private JTextField     passwd; // 임시
-	private JTextField     pwdRe;  // 임시
-	//private JPasswordField passwd;
-	// JPasswordField pwdRe;
+	private JTextField     passwd;
+	private JTextField     pwdRe;
 	private JTextField     username;
 	private JTextField     phone;
 	private JTextField     addr;
@@ -56,6 +53,7 @@ public class JoinScreen extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.WHITE);
+		panel.setBackground(Color.white);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -63,6 +61,11 @@ public class JoinScreen extends JFrame {
 		lblNewLabel.setBounds(185, 0, 300, 47);
 		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("무신사", Font.BOLD, 20));
+		
+		JLabel lblNewLabel1 = new JLabel("  회원가입");
+		lblNewLabel1.setBounds(185, 18, 300, 47);
+		panel.add(lblNewLabel1);
+		lblNewLabel1.setFont(new Font("HY견고딕", Font.PLAIN, 15));
 
 		JLabel lblNewLabel_1 = new JLabel("아이디");
 		lblNewLabel_1.setFont(new Font("HY견고딕", Font.PLAIN, 12));
@@ -273,6 +276,18 @@ public class JoinScreen extends JFrame {
 			}
 			@Override
 			public void keyPressed(KeyEvent e) { }
+		});
+		//아이디 검사 기능
+		btnJoinButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(!checkId(userid.getText())) {
+					JOptionPane.showMessageDialog(null,
+							"아이디를 다시 입력해주세요");
+					userid.setText("");
+					userid.grabFocus();
+				}
+				}
 		});
 		// 이메일 검사 및 가입 기능
 		btnJoinButton.addActionListener(new ActionListener() {
