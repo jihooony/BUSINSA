@@ -27,8 +27,7 @@ public class Mypage extends JFrame {
     JPanel pbtn;
     JButton search,btnInsert,home,del;
 	private static String userid;
-       
-   
+
     public Mypage (String userid) {
     	this.userid = userid;
     	

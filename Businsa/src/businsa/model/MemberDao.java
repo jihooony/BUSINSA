@@ -11,8 +11,8 @@ import java.util.Vector;
 public class MemberDao {
 
 	private static String driver = "oracle.jdbc.OracleDriver";
-	private static String dburl  = "jdbc:oracle:thin:@192.168.0.200:1521:xe";
-	private static String dbuid  = "businsa";
+	private static String dburl  = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static String dbuid  = "businsa2";
 	private static String dbpwd  = "1234";
 	
 	private static Connection conn = null;
@@ -190,14 +190,14 @@ public class MemberDao {
 		          try{
 		             
 		              con = getInstance();
-		              String sql = "SELECT * FROM MEMBER";
+		              String sql = "SELECT * FROM MEMBER ORDER BY USERNAME ASC";
 		              ps = con.prepareStatement(sql);
 		              rs = ps.executeQuery();
 		             
 		              while(rs.next()){
 
 		                  String userid = rs.getString("userid");
-		                  String passwd = rs.getString("passwd");
+		                  //String passwd = rs.getString("passwd");
 		                  String name = rs.getString("username");
 		                  String phone = rs.getString("phone");
 		                  String addr = rs.getString("addr");
@@ -205,7 +205,7 @@ public class MemberDao {
 
 		                  Vector row = new Vector();
 		                  row.add(userid);
-		                  row.add(passwd);
+		                  //row.add(passwd);
 		                  row.add(name);
 		                  row.add(phone);
 		                  row.add(addr);
