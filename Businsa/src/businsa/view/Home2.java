@@ -61,7 +61,7 @@ public class Home2 extends JFrame {
     l3 = new JLabel(" 빈티지 ");
     l3.setBounds(1150,600,150,30);
     
-    l4 = new JLabel(userid);
+    l4 = new JLabel(userid + "님이 로그인");
     l4.setBounds(700,650,200,50);
     
     
@@ -105,7 +105,7 @@ l4.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		new Home();
+		new Mypage(userid);
 		fr.setVisible(false);
 		
 		

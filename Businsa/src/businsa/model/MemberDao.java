@@ -1,13 +1,21 @@
 package businsa.model;
-// 이덕만
+
+import java.awt.Component;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 public class MemberDao {
 
-	private Connection conn = null;
+	private static String driver = "oracle.jdbc.OracleDriver";
+	private static String dburl  = "jdbc:oracle:thin:@192.168.0.200:1521:xe";
+	private static String dbuid  = "businsa";
+	private static String dbpwd  = "1234";
+	
+	private static Connection conn = null;
 
 	// 생성자
 	public MemberDao() {
@@ -153,4 +161,67 @@ public class MemberDao {
 		      }
 		      return false;
 		   }
+		   
+		   public static Connection getInstance() {
+				if(conn != null ) {
+					return conn;
+				}
+				
+				try {
+					Class.forName(driver);
+					conn = DriverManager.getConnection(dburl, dbuid, dbpwd);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				return conn;
+			}
+			
+ 
+		      public Vector getMemberList(){
+		          
+		          Vector data = new Vector();
+		         
+		          Connection con = null;       //연결
+		          PreparedStatement ps = null; //명령
+		          ResultSet rs = null;         //결과
+		         
+		          try{
+		             
+		              con = getInstance();
+		              String sql = "SELECT * FROM MEMBER";
+		              ps = con.prepareStatement(sql);
+		              rs = ps.executeQuery();
+		             
+		              while(rs.next()){
+
+		                  String userid = rs.getString("userid");
+		                  String passwd = rs.getString("passwd");
+		                  String name = rs.getString("username");
+		                  String phone = rs.getString("phone");
+		                  String addr = rs.getString("addr");
+		                  String email = rs.getString("email");
+
+		                  Vector row = new Vector();
+		                  row.add(userid);
+		                  row.add(passwd);
+		                  row.add(name);
+		                  row.add(phone);
+		                  row.add(addr);
+		                  row.add(email);
+		                 
+		                  data.add(row);             
+		              }//while
+		          }catch(Exception e){
+		              e.printStackTrace();
+		          }
+		          return data;
+
+		   }
+
+			public Vector<Vector> getMemberList(Component labelFor) {
+				// TODO Auto-generated method stub
+				return null;
+			}
 	}

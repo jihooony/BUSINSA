@@ -22,13 +22,11 @@ public class LoginWindow extends JFrame {
    private JPanel contentPane;
    private JTextField userid, passwd;
    private JButton loginBtn, joinBtn;
-   private JButton btnNewButton_1;
-   private JButton btnNewButton_2;
-   
+ 
    
    public LoginWindow() {
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      setSize(400, 500);
+      setSize(400, 450);
       setLocationRelativeTo(null);
       
       contentPane = new JPanel();
@@ -49,14 +47,14 @@ public class LoginWindow extends JFrame {
       
       
       userid = new JTextField();
-      userid.setText("");
+      userid.setText("wlgns");
       userid.setBounds(40, 155, 303, 35);
       contentPane.add(userid);
       userid.setColumns(10);
       userid.getBorder();
       
       passwd = new JTextField();
-      passwd.setText("");
+      passwd.setText("wlgns");
       passwd.setColumns(10);
       passwd.setBounds(40, 200, 303, 35);
       contentPane.add(passwd);
@@ -74,36 +72,20 @@ public class LoginWindow extends JFrame {
       btnNewButton.setBounds(175, 240, 167, 23);
       contentPane.add(btnNewButton);
       
-      btnNewButton_1 = new JButton("카카오 로그인");
-      btnNewButton_1.setFont(new Font("HY견고딕", Font.PLAIN, 14));
-      btnNewButton_1.setBackground(new Color(255, 204, 000));
-      btnNewButton_1.setForeground(new Color(255, 255, 255));
-      btnNewButton_1.setBounds(40, 280, 303, 33);
-      btnNewButton_1.setBorderPainted(false);
-      contentPane.add(btnNewButton_1);
-      
-      btnNewButton_2 = new JButton("네이버 로그인");
-      btnNewButton_2.setFont(new Font("HY견고딕", Font.PLAIN, 14));
-      btnNewButton_2.setBackground(new Color(051, 153, 051));
-      btnNewButton_2.setForeground(new Color(255, 255, 255));
-      btnNewButton_2.setBounds(40, 320, 303, 33);
-      btnNewButton_2.setBorderPainted(false);
-      contentPane.add(btnNewButton_2);
-      
       
       loginBtn = new JButton("로그인");
       loginBtn.setBackground(new Color(128, 128, 128));
       loginBtn.setForeground(new Color(255, 255, 255));
       loginBtn.setBorderPainted(false);
       loginBtn.setFont(new Font("HY견고딕", Font.PLAIN, 14));
-      loginBtn.setBounds(40, 360, 303, 29);
+      loginBtn.setBounds(40, 280, 303, 29);
       contentPane.add(loginBtn);
       
       joinBtn = new JButton("회원가입");
       joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
       joinBtn.setBackground(new Color(255, 255, 255));
       joinBtn.setForeground(new Color(0, 128, 255));
-      joinBtn.setBounds(125, 400, 136, 29);
+      joinBtn.setBounds(125, 320, 136, 29);
       joinBtn.setBorderPainted(false);
       contentPane.add(joinBtn);
       

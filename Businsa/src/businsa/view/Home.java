@@ -26,7 +26,7 @@ public class Home extends JFrame {
 	
 	fr.getContentPane().setLayout(null);
 	
-    fr.setSize(1450, 800);
+    fr.setSize(1450, 830);
     fr.setLocationRelativeTo(null);
     fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     
