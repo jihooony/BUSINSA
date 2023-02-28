@@ -1,112 +1,108 @@
 package businsa.view;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Vector;
+import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
 
 import businsa.model.MemberDao;
 
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+
 public class Mypage extends JFrame {
-	
-	Vector v;  
-    Vector cols;
-    DefaultTableModel model;
-    JLabel     user;
-    JTable jTable;
-    JScrollPane pane;
-    JPanel pbtn;
-    JButton search,btnInsert,home,del;
+
+	private JPanel contentPane;
+	private JTable table;
+	private JScrollPane scrollPane;
+	private JButton btnNewButton,btnNewButton1,btnNewButton2,btnNewButton3;
 	private static String userid;
 
-    public Mypage (String userid) {
-    	this.userid = userid;
-    	
-        setTitle("마이페이지");
-        //v=getMemberList();
-        
-        JLabel user = new JLabel(userid + "님의 마이페이지");
-        add(user,BorderLayout.NORTH);
-        
-        
-        MemberDao dao = new MemberDao();
-        v = dao.getMemberList();
-        cols = getColumnList();
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Mypage frame = new Mypage(userid);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-        model = new DefaultTableModel(v, cols);
- 
-        jTable = new JTable(model);
-        pane = new JScrollPane(jTable);
-        add(pane);
-       
-        pbtn = new JPanel();
-        
-        search = new JButton("검색");
-        pbtn.add(search);
-        add(pbtn,BorderLayout.SOUTH);
-        
-        btnInsert = new JButton("주문목록");
-        pbtn.add(btnInsert);
-        add(pbtn,BorderLayout.SOUTH);
-       
-        home = new JButton("HOME");
-        pbtn.add(home);
-        add(pbtn,BorderLayout.SOUTH);
-        
-        del = new JButton("탈퇴");
-        pbtn.add(del);
-        add(pbtn,BorderLayout.SOUTH);
-        
-        setSize(800,800);
-        setVisible(true);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        home.addActionListener(new ActionListener() {
+	public Mypage(String userid) {
+		this.userid = userid;
+		
+		MemberDao memDao = new MemberDao();
+		
+		
+		setTitle("MyPage");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 661, 260);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(6, 6, 6, 6));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder
+		(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "회원정보 상세보기", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.setBounds(6, 10, 633, 57);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("아이디 : " + userid);
+		lblNewLabel.setBounds(15, 22, 100, 15);
+		panel.add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("상세정보");
+		btnNewButton.setBounds(525, 18, 97, 23);
+		panel.add(btnNewButton);
+		
+		JButton btnNewButton1 = new JButton("주문목록");
+		btnNewButton1.setBounds(420, 18, 97, 23);
+		panel.add(btnNewButton1);
+		
+		JButton btnNewButton2 = new JButton("HOME");
+		btnNewButton2.setBounds(10, 185, 100, 23);
+		add(btnNewButton2);
+		
+		JButton btnNewButton3 = new JButton("회원탈퇴");
+		btnNewButton3.setBounds(532, 185, 100, 23);
+		add(btnNewButton3);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 78, 621, 100);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		
+		btnNewButton2.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Home2(userid);
-				setVisible(false);
 				
 			}
 		});
-    }
-    
-   
-    
-    private Vector<Vector> getDataList() {
-		MemberDao       dao   =  new MemberDao();
-		Vector<Vector>  list  =  dao.getMemberList(user.getLabelFor());
-		return  list;
 	}
-
-    private Vector<String> getColumnList(){
-        Vector<String> col = new Vector<>();
-        col.add("아이디");
-        //col.add("비밀번호");
-        col.add("이름");
-        col.add("전화");
-        col.add("주소");
-        col.add("이메일");
-       
-        return col;
-    }//getColumn
-    
-    
-
-    public static void main(String[] args) {
-        new Mypage(userid);
-    }
-    
-   
 }

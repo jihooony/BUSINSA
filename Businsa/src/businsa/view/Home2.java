@@ -1,28 +1,26 @@
 package businsa.view;
 
 import java.awt.Color;
-
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import businsa.model.MemberDao;
 
 public class Home2 extends JFrame {
 	
 	JLabel p1,p2,p3;
 	JLabel l1,l2,l3,l4;
-	String userid;
+	static String userid;
 	ImageIcon i1;
 	
 	
 	public  Home2(String userid) {
 	this.userid = userid;
+	
 	
 	JFrame fr = new JFrame("HOME");
 	
@@ -62,7 +60,7 @@ public class Home2 extends JFrame {
     l3.setBounds(1150,600,150,30);
     
     l4 = new JLabel(userid + "님이 로그인");
-    l4.setBounds(700,650,200,50);
+    l4.setBounds(670,650,200,50);
     
     
     fr.getContentPane().add(p1);
@@ -105,7 +103,7 @@ l4.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		new Mypage(userid);
+		new Mypage2(userid);
 		fr.setVisible(false);
 		
 		
@@ -207,7 +205,7 @@ p3.addMouseListener(new MouseListener() {
 }
 
 	public static void main(String[] args) {
-		new Home();
+		new Mypage(userid);
 		
 	}
 	

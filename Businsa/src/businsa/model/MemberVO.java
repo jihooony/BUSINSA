@@ -1,5 +1,5 @@
 package businsa.model;
-// 이덕만
+
 public class MemberVO {
 
 	// Fields

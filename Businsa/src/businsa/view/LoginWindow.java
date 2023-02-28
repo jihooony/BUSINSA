@@ -58,34 +58,20 @@ public class LoginWindow extends JFrame {
       passwd.setColumns(10);
       passwd.setBounds(40, 200, 303, 35);
       contentPane.add(passwd);
-      
-      JRadioButton rdbtnNewRadioButton = new JRadioButton("자동로그인");
-      rdbtnNewRadioButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
-      rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
-      rdbtnNewRadioButton.setBounds(40, 240, 107, 23);
-      contentPane.add(rdbtnNewRadioButton);
-      
-      JButton btnNewButton = new JButton("아이디|비밀번호찾기");
-      btnNewButton.setForeground(new Color(0, 0, 0));
-    
-      btnNewButton.setBackground(new Color(255, 255, 255));
-      btnNewButton.setBounds(175, 240, 167, 23);
-      contentPane.add(btnNewButton);
-      
-      
+          
       loginBtn = new JButton("로그인");
       loginBtn.setBackground(new Color(128, 128, 128));
       loginBtn.setForeground(new Color(255, 255, 255));
       loginBtn.setBorderPainted(false);
       loginBtn.setFont(new Font("HY견고딕", Font.PLAIN, 14));
-      loginBtn.setBounds(40, 280, 303, 29);
+      loginBtn.setBounds(40, 250, 303, 29);
       contentPane.add(loginBtn);
       
       joinBtn = new JButton("회원가입");
       joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
       joinBtn.setBackground(new Color(255, 255, 255));
       joinBtn.setForeground(new Color(0, 128, 255));
-      joinBtn.setBounds(125, 320, 136, 29);
+      joinBtn.setBounds(125, 300, 136, 29);
       joinBtn.setBorderPainted(false);
       contentPane.add(joinBtn);
       

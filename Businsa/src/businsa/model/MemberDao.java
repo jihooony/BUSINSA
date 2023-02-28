@@ -178,50 +178,35 @@ public class MemberDao {
 				return conn;
 			}
 			
- 
-		      public Vector getMemberList(){
-		          
-		          Vector data = new Vector();
-		         
-		          Connection con = null;       //연결
-		          PreparedStatement ps = null; //명령
-		          ResultSet rs = null;         //결과
-		         
-		          try{
-		             
-		              con = getInstance();
-		              String sql = "SELECT * FROM MEMBER ORDER BY USERNAME ASC";
-		              ps = con.prepareStatement(sql);
-		              rs = ps.executeQuery();
-		             
-		              while(rs.next()){
-
-		                  String userid = rs.getString("userid");
-		                  //String passwd = rs.getString("passwd");
-		                  String name = rs.getString("username");
-		                  String phone = rs.getString("phone");
-		                  String addr = rs.getString("addr");
-		                  String email = rs.getString("email");
-
-		                  Vector row = new Vector();
-		                  row.add(userid);
-		                  //row.add(passwd);
-		                  row.add(name);
-		                  row.add(phone);
-		                  row.add(addr);
-		                  row.add(email);
-		                 
-		                  data.add(row);             
-		              }//while
-		          }catch(Exception e){
-		              e.printStackTrace();
-		          }
-		          return data;
-
-		   }
-
-			public Vector<Vector> getMemberList(Component labelFor) {
-				// TODO Auto-generated method stub
-				return null;
+		   public boolean checkUserId(String userid) {
+				String   sql   = "";
+				sql += "SELECT COUNT(*) CNT ";     
+				sql += "FROM   MEMBER       ";
+				sql += "WHERE  USERID = ?   ";
+				PreparedStatement pstmt  = null;
+				ResultSet         rs     = null;
+				try {
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, userid);
+					rs = pstmt.executeQuery();
+					if(rs.next()) {
+						int cnt = rs.getInt("CNT");
+						if(cnt > 0) {
+							return true;
+						} 
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						if(rs    != null) rs.close();
+						if(pstmt != null) pstmt.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				return false;
 			}
+		     
+			
 	}
