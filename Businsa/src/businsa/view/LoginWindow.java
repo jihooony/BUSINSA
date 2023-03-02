@@ -17,6 +17,8 @@ import javax.swing.border.EmptyBorder;
 
 import businsa.model.MemberDao;
 
+
+//로그인
 public class LoginWindow extends JFrame {
 
    private JPanel contentPane;
@@ -41,34 +43,34 @@ public class LoginWindow extends JFrame {
       contentPane.add(lblNewLabel);
       
       JLabel lblNewLabel1 = new JLabel("로그인",JLabel.CENTER);
-      lblNewLabel1.setFont(new Font("HY견고딕", Font.BOLD,25));
+      lblNewLabel1.setFont(new Font("세방고딕", Font.BOLD,25));
       lblNewLabel1.setBounds(40, 40, 303, 133);
       contentPane.add(lblNewLabel1);
       
       
       userid = new JTextField();
-      userid.setText("wlgns");
+      userid.setText("");
       userid.setBounds(40, 155, 303, 35);
       contentPane.add(userid);
       userid.setColumns(10);
       userid.getBorder();
       
       passwd = new JTextField();
-      passwd.setText("wlgns");
+      passwd.setText("");
       passwd.setColumns(10);
       passwd.setBounds(40, 200, 303, 35);
       contentPane.add(passwd);
           
       loginBtn = new JButton("로그인");
-      loginBtn.setBackground(new Color(128, 128, 128));
+      loginBtn.setBackground(new Color(000, 000, 000));
       loginBtn.setForeground(new Color(255, 255, 255));
       loginBtn.setBorderPainted(false);
-      loginBtn.setFont(new Font("HY견고딕", Font.PLAIN, 14));
+      loginBtn.setFont(new Font("세방고딕", Font.BOLD, 14));
       loginBtn.setBounds(40, 250, 303, 29);
       contentPane.add(loginBtn);
       
       joinBtn = new JButton("회원가입");
-      joinBtn.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+      joinBtn.setFont(new Font("세방고딕", Font.BOLD, 15));
       joinBtn.setBackground(new Color(255, 255, 255));
       joinBtn.setForeground(new Color(0, 128, 255));
       joinBtn.setBounds(125, 300, 136, 29);

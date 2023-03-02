@@ -23,6 +23,8 @@ public class Home extends JFrame {
 	public  Home() {
 		
 	JFrame fr = new JFrame("HOME");
+	fr.getContentPane().setBackground(Color.white);
+	
 	
 	fr.getContentPane().setLayout(null);
 	
@@ -35,8 +37,7 @@ public class Home extends JFrame {
     p1.setBounds(100, 100, 350, 500);
     p1.setOpaque(true);
     p1.setBackground(Color.DARK_GRAY);
-    //i1 = new ImageIcon(getClass().getResource("스크린샷(1).png"));
-    //p1.setIcon(i1);
+ 
 
     p2 = new JLabel("편집샵사진");
     p2.setIcon(new ImageIcon("C:\\Users\\GGG\\Desktop\\편집샵.jfif"));
@@ -51,18 +52,25 @@ public class Home extends JFrame {
     p3.setBackground(Color.LIGHT_GRAY);
       
     l1 = new JLabel(" 보세 ");
-    l1.setBounds(250,600,150,30);
+    l1.setBounds(250,600,150,50);
+    l1.setFont(new Font("세방고딕", Font.BOLD, 15));
 
     l2 = new JLabel(" 편집샵 ");
-    l2.setBounds(700,600,50,30);
+    l2.setBounds(700,600,150,50);
+    l2.setFont(new Font("세방고딕", Font.BOLD, 15));
 
     l3 = new JLabel(" 빈티지 ");
-    l3.setBounds(1150,600,150,30);
+    l3.setBounds(1150,600,150,50);
+    l3.setFont(new Font("세방고딕", Font.BOLD, 15));
     
     btnlog = new JButton("LOGIN");
     btnlog.setBounds(625,680,200,50);
-    btnlog.setBackground(new Color(204,204,204));
-    btnlog.setFont(new Font("무신사", Font.PLAIN, 20));
+    btnlog.setBackground(new Color(0,0,0));
+    btnlog.setForeground(new Color(255,255,255));
+    btnlog.setBorderPainted( false );
+    btnlog.setFont(new Font("세방고딕", Font.BOLD, 20));
+    btnlog.setFocusPainted(false);
+	
     
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
@@ -120,6 +128,11 @@ p1.addMouseListener(new MouseListener() {
 		
 	}
 });
+	}
+
+public static void main(String[] args) {
+	new Home();
+	
 
 }
 

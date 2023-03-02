@@ -1,6 +1,7 @@
 package businsa.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -16,6 +17,7 @@ public class Home2 extends JFrame {
 	JLabel l1,l2,l3,l4;
 	static String userid;
 	ImageIcon i1;
+	
 	
 	
 	public  Home2(String userid) {
@@ -51,17 +53,20 @@ public class Home2 extends JFrame {
     p3.setBackground(Color.LIGHT_GRAY);
       
     l1 = new JLabel(" 보세 ");
-    l1.setBounds(250,600,150,30);
+    l1.setBounds(250,600,150,50);
+    l1.setFont(new Font("세방고딕", Font.BOLD, 15));
 
     l2 = new JLabel(" 편집샵 ");
-    l2.setBounds(700,600,50,30);
+    l2.setBounds(700,600,150,50);
+    l2.setFont(new Font("세방고딕", Font.BOLD, 15));
 
     l3 = new JLabel(" 빈티지 ");
-    l3.setBounds(1150,600,150,30);
+    l3.setBounds(1150,600,150,50);
+    l3.setFont(new Font("세방고딕", Font.BOLD, 15));
     
     l4 = new JLabel(userid + "님이 로그인");
     l4.setBounds(670,650,200,50);
-    
+    l4.setFont(new Font("세방고딕", Font.BOLD, 15));
     
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
@@ -103,7 +108,7 @@ l4.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		new Mypage2(userid);
+		new Mypage(userid);
 		fr.setVisible(false);
 		
 		
@@ -205,7 +210,7 @@ p3.addMouseListener(new MouseListener() {
 }
 
 	public static void main(String[] args) {
-		new Mypage(userid);
+		new Home();
 		
 	}
 	

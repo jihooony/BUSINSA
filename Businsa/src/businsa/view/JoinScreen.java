@@ -22,6 +22,8 @@ import javax.swing.border.EmptyBorder;
 import businsa.model.MemberDao;
 import businsa.model.MemberVO;
 
+
+//회원가입
 public class JoinScreen extends JFrame {
 
 	// 필드
@@ -58,115 +60,122 @@ public class JoinScreen extends JFrame {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("BUSINSA");
-		lblNewLabel.setBounds(185, 0, 300, 47);
+		lblNewLabel.setBounds(180, 0, 300, 47);
+		lblNewLabel.setForeground(new Color(0,0,0));
 		panel.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("무신사", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font("무신사", Font.BOLD, 25));
 		
 		JLabel lblNewLabel1 = new JLabel("  회원가입");
-		lblNewLabel1.setBounds(185, 18, 300, 47);
+		lblNewLabel1.setBounds(190, 23, 300, 47);
+		lblNewLabel1.setForeground(new Color(0,0,0));
 		panel.add(lblNewLabel1);
-		lblNewLabel1.setFont(new Font("HY견고딕", Font.PLAIN, 15));
+		lblNewLabel1.setFont(new Font("세방고딕", Font.PLAIN, 20));
 
 		JLabel lblNewLabel_1 = new JLabel("아이디");
-		lblNewLabel_1.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_1.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(53, 87, 36, 25);
 		panel.add(lblNewLabel_1); 
 
 		userid =new JTextField();
 		userid.setBounds(101, 77, 282, 45);
 		panel.add(userid);
-		userid.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		userid.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		userid.setColumns(15);
 		
 		JLabel lblNewLabel_10 = new JLabel("(영문,한글,숫자 2~15자리)");
-		lblNewLabel_10.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_10.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_10.setBounds(101, 132, 157, 25);
 		panel.add(lblNewLabel_10);
 
 		btnCheckButton = new JButton("아이디중복확인");
-		btnCheckButton.setBackground(new Color(204, 204, 204));
-		btnCheckButton.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		btnCheckButton.setBackground(new Color(0, 0, 0));
+		btnCheckButton.setForeground(new Color(255, 255, 255));
+		btnCheckButton.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		btnCheckButton.setBounds(258, 132, 125, 25);
 		panel.add(btnCheckButton);
 
 		JLabel lblNewLabel_2 = new JLabel("비밀번호");
-		lblNewLabel_2.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_2.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(41, 176, 48, 25);
 		panel.add(lblNewLabel_2);
 
 		//passwd = new JPasswordField();
 		passwd = new JTextField(); // 임시
-		passwd.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		passwd.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		passwd.setBounds(101, 166, 282, 45);
 		panel.add(passwd);
 		passwd.setColumns(20);
 
 		JLabel lblNewLabel_3 = new JLabel("(숫자,영문,특수문자 최소 1개 포함 8~20자)");
-		lblNewLabel_3.setFont(new Font("굴림체", Font.PLAIN, 12));
+		lblNewLabel_3.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_3.setBounds(101, 221, 282, 15);
 		panel.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel(" 비밀번호재입력");
-		lblNewLabel_4.setFont(new Font("HY견고딕", Font.PLAIN, 12));
-		lblNewLabel_4.setBounds(0, 261, 96, 15);
+		lblNewLabel_4.setFont(new Font("세방고딕", Font.PLAIN, 12));
+		lblNewLabel_4.setBounds(13, 261, 96, 15);
 		panel.add(lblNewLabel_4);
 
 		//pwdRe = new JPasswordField();
 		pwdRe = new JTextField();
-		pwdRe.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		pwdRe.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pwdRe.setBounds(101, 246, 282, 45);
 		panel.add(pwdRe);
 		pwdRe.setColumns(20);
 
 		JLabel lblNewLabel_5 = new JLabel("이름");
-		lblNewLabel_5.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_5.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_5.setBounds(65, 311, 24, 25);
 		panel.add(lblNewLabel_5);
 
 		username = new JTextField();
 		username.setBounds(101, 301, 282, 46);
+		username.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		panel.add(username);
 		username.setColumns(50);
 
 		JLabel lblNewLabel_6 = new JLabel("핸드폰");
-		lblNewLabel_6.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_6.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_6.setBounds(53, 367, 36, 25);
 		panel.add(lblNewLabel_6);
 
 		phone = new JTextField();
 		phone.setBounds(101, 357, 283, 45);
+		phone.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		panel.add(phone);
 		phone.setColumns(20);
 
 		JLabel lblNewLabel_7 = new JLabel("주소");
-		lblNewLabel_7.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_7.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_7.setBounds(65, 423, 24, 25);
 		panel.add(lblNewLabel_7);
 
 		addr = new JTextField();
 		addr.setBounds(101, 412, 282, 47);
+		addr.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		panel.add(addr);
 		addr.setColumns(300);
 
 		JLabel lblNewLabel_8 = new JLabel("이메일");
-		lblNewLabel_8.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_8.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_8.setBounds(53, 479, 36, 25);
 		panel.add(lblNewLabel_8);
 
 		email = new JTextField();
 		email.setBounds(101, 469, 282, 45);
+		email.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		panel.add(email);
 		email.setColumns(320);
 
 		JLabel lblNewLabel_9 = new JLabel("계정 분실 시 본인인증 정보로 활용됩니다.");
-		lblNewLabel_9.setFont(new Font("HY견고딕", Font.PLAIN, 12));
+		lblNewLabel_9.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		lblNewLabel_9.setBounds(101, 513, 274, 25);
 		panel.add(lblNewLabel_9);
 
 		btnJoinButton = new JButton("가입 완료");
-		btnJoinButton.setBackground(new Color(204, 204, 204));
-		btnJoinButton.setForeground(Color.BLACK);
-		btnJoinButton.setFont(new Font("HY견고딕", Font.PLAIN, 16));
+		btnJoinButton.setBackground(new Color(0, 0, 0));
+		btnJoinButton.setForeground(Color.WHITE);
+		btnJoinButton.setFont(new Font("세방고딕", Font.PLAIN, 14));
 		btnJoinButton.setBounds(181, 548, 114, 35);
 		panel.add(btnJoinButton);
 		
@@ -301,7 +310,7 @@ public class JoinScreen extends JFrame {
 				} else {
 					System.out.println("가입완료 클릭");
 					joinMember();
-					new Logcheck();
+					new Home();
 				}
 				
 			}
