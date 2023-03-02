@@ -53,10 +53,12 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		});
 	}
 	public Mypage(String userid) {
+		
+		
 		this.userid = userid;
 		
 		MemberDao memDao = new MemberDao();
-
+		
 		setTitle("MyPage");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 150, 661, 290);
@@ -67,7 +69,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 
 		JPanel panel = new JPanel();
 		panel.setBorder
-		(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "회원정보 상세보기", TitledBorder.LEADING, TitledBorder.TOP,null, new Color(0, 0, 0)));
+		(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "회원정보 상세보기",TitledBorder.LEADING, TitledBorder.TOP,null, new Color(0, 0, 0)));
 		panel.setBounds(6, 10, 633, 57);
 		panel.setFont(new Font("세방고딕", Font.BOLD, 12));
 		contentPane.add(panel);
@@ -107,6 +109,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		pa.add(b);
 		phone = new JLabel();
 		phone.setBounds(100, 20, 100, 30);
+		phone.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(phone);
 		
 		
@@ -116,6 +119,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		pa.add(c);
 		addr = new JLabel();
 		addr.setBounds(100, 40, 100, 30);
+		addr.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(addr);
 		
 		d = new JLabel("이메일 :");
@@ -124,6 +128,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		pa.add(d);
 		email = new JLabel();
 		email.setBounds(100, 60, 100, 30);
+		email.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(email);
 		
 		e = new JLabel("가입일 :");
@@ -132,22 +137,29 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		pa.add(e);
 		joinDate = new JLabel();
 		joinDate.setBounds(100, 80, 200, 30);
+		joinDate.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(joinDate);
 
 		JButton btnNewButton = new JButton("상세정보");
-		btnNewButton.setBackground(new Color(125, 125, 125));
+		btnNewButton.setBackground(new Color(0, 0, 0));
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBounds(525, 18, 97, 23);
+		btnNewButton.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		btnNewButton.setFocusPainted(false);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton2 = new JButton("HOME");
 		btnNewButton2.setBounds(10, 210, 100, 23);
-		btnNewButton2.setBackground(new Color(125, 125, 125));
+		btnNewButton2.setBackground(new Color(0, 0, 0));
+		btnNewButton2.setForeground(new Color(255, 255, 255));
+		btnNewButton2.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		add(btnNewButton2);
 		
 		JButton btnNewButton3 = new JButton("회원탈퇴");
-		btnNewButton3.setBackground(new Color(125, 125, 125));
+		btnNewButton3.setBackground(new Color(0, 0, 0));
+		btnNewButton3.setForeground(new Color(255, 255, 255));
 		btnNewButton3.setBounds(532, 210, 100, 23);
+		btnNewButton3.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		add(btnNewButton3);
 
 		// 기능
