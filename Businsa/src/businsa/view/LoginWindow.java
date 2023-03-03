@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -22,7 +23,8 @@ import businsa.model.MemberDao;
 public class LoginWindow extends JFrame {
 
    private JPanel contentPane;
-   private JTextField userid, passwd;
+   private JTextField userid;
+   private JPasswordField passwd;
    private JButton loginBtn, joinBtn;
  
    
@@ -51,14 +53,17 @@ public class LoginWindow extends JFrame {
       userid = new JTextField();
       userid.setText("");
       userid.setBounds(40, 155, 303, 35);
+      userid.setFont(new Font("세방고딕", Font.BOLD,15));
       contentPane.add(userid);
       userid.setColumns(10);
       userid.getBorder();
       
-      passwd = new JTextField();
+      passwd = new JPasswordField();
       passwd.setText("");
       passwd.setColumns(10);
+      passwd.setFont(new Font("세방고딕", Font.BOLD,15));
       passwd.setBounds(40, 200, 303, 35);
+      passwd.setEchoChar('*');
       contentPane.add(passwd);
           
       loginBtn = new JButton("로그인");

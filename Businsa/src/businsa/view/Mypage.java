@@ -64,6 +64,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		setBounds(100, 150, 661, 290);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(6, 6, 6, 6));
+		contentPane.setBackground(Color.WHITE);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
@@ -72,12 +73,14 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "회원정보 상세보기",TitledBorder.LEADING, TitledBorder.TOP,null, new Color(0, 0, 0)));
 		panel.setBounds(6, 10, 633, 57);
 		panel.setFont(new Font("세방고딕", Font.BOLD, 12));
+		panel.setBackground(Color.WHITE);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JPanel pa = new JPanel();
 		pa.setBorder(new LineBorder(new Color(160, 160, 160)));
 		pa.setBounds(10, 78, 625, 120);
+		pa.setBackground(new Color(204,204,204));
 		pa.setLayout(null);
 		contentPane.add(pa);
 
@@ -123,11 +126,11 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		pa.add(addr);
 		
 		d = new JLabel("이메일 :");
-		d.setBounds(10, 60, 100, 30);
+		d.setBounds(10, 60, 200, 30);
 		d.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(d);
 		email = new JLabel();
-		email.setBounds(100, 60, 100, 30);
+		email.setBounds(100, 60, 300, 30);
 		email.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(email);
 		
@@ -147,6 +150,14 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		btnNewButton.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		btnNewButton.setFocusPainted(false);
 		panel.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("주문목록");
+		btnNewButton_1.setBackground(new Color(0, 0, 0));
+		btnNewButton_1.setForeground(new Color(255, 255, 255));
+		btnNewButton_1.setBounds(425, 18, 97, 23);
+		btnNewButton_1.setFont(new Font("세방고딕", Font.PLAIN, 12));
+		btnNewButton_1.setFocusPainted(false);
+		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton2 = new JButton("HOME");
 		btnNewButton2.setBounds(10, 210, 100, 23);
@@ -178,6 +189,16 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new Home2(userid);
+				setVisible(false);
+				
+			}
+		});
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Buylist(userid);
 				setVisible(false);
 				
 			}
@@ -215,6 +236,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 			if(!userCode.getText().equals("")) {
 				memDelete();
 				viewClear();
+				
 			}
 			break;
 		}
@@ -309,6 +331,8 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 					memDao.clear3(inUserCode); 
 					if(aftcnt > 0) {
 						msg = "회원탈퇴 되었습니다";
+						setVisible(false);
+						new Home();
 					} else {
 						msg = "탈퇴 되지 않았습니다";
 					}

@@ -14,12 +14,12 @@ import javax.swing.JLabel;
 
 public class Home extends JFrame {
 	
+	JLabel a;
 	JLabel p1,p2,p3;
 	JLabel l1,l2,l3,l4;
 	JButton btnlog;
 	ImageIcon i1;
-	
-	
+
 	public  Home() {
 		
 	JFrame fr = new JFrame("HOME");
@@ -31,6 +31,12 @@ public class Home extends JFrame {
     fr.setSize(1450, 830);
     fr.setLocationRelativeTo(null);
     fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    
+    a = new JLabel("BUSINSA");
+    a.setFont(new Font("무신사",Font.BOLD,40));
+    a.setForeground(Color.BLACK);
+    a.setBounds(625,0,200,50);
+    
     
     p1 = new JLabel("보세사진");
     p1.setIcon(new ImageIcon("C:\\Users\\GGG\\Desktop\\보세.jfif"));
@@ -54,14 +60,17 @@ public class Home extends JFrame {
     l1 = new JLabel(" 보세 ");
     l1.setBounds(250,600,150,50);
     l1.setFont(new Font("세방고딕", Font.BOLD, 15));
+    l1.setForeground(Color.BLACK);
 
     l2 = new JLabel(" 편집샵 ");
     l2.setBounds(700,600,150,50);
     l2.setFont(new Font("세방고딕", Font.BOLD, 15));
-
+    l2.setForeground(Color.BLACK);
+    
     l3 = new JLabel(" 빈티지 ");
     l3.setBounds(1150,600,150,50);
     l3.setFont(new Font("세방고딕", Font.BOLD, 15));
+    l3.setForeground(Color.BLACK);
     
     btnlog = new JButton("LOGIN");
     btnlog.setBounds(625,680,200,50);
@@ -70,8 +79,8 @@ public class Home extends JFrame {
     btnlog.setBorderPainted( false );
     btnlog.setFont(new Font("세방고딕", Font.BOLD, 20));
     btnlog.setFocusPainted(false);
-	
     
+    fr.getContentPane().add(a);
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
     fr.getContentPane().add(p3);
@@ -123,7 +132,7 @@ p1.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new B(null);
+		new B("B",null);
 		fr.setVisible(false);
 		
 	}

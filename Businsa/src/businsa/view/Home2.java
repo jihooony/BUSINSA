@@ -13,9 +13,10 @@ import businsa.model.MemberDao;
 
 public class Home2 extends JFrame {
 	
-	JLabel p1,p2,p3;
+	JLabel a,p1,p2,p3;
 	JLabel l1,l2,l3,l4;
 	static String userid;
+	static String b;
 	ImageIcon i1;
 	
 	
@@ -31,6 +32,12 @@ public class Home2 extends JFrame {
     fr.setSize(1450, 800);
     fr.setLocationRelativeTo(null);
     fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    fr.getContentPane().setBackground(Color.WHITE);
+    
+    a = new JLabel("BUSINSA");
+    a.setFont(new Font("무신사",Font.BOLD,40));
+    a.setForeground(Color.BLACK);
+    a.setBounds(625,0,200,50);
     
     p1 = new JLabel("보세사진");
     p1.setIcon(new ImageIcon("C:\\Users\\GGG\\Desktop\\보세.jfif"));
@@ -68,6 +75,7 @@ public class Home2 extends JFrame {
     l4.setBounds(670,650,200,50);
     l4.setFont(new Font("세방고딕", Font.BOLD, 15));
     
+    fr.getContentPane().add(a);
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
     fr.getContentPane().add(p3);
@@ -140,7 +148,7 @@ p1.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new B(userid);
+		new B("B",userid);
 		fr.setVisible(false);
 		
 	}
@@ -170,7 +178,7 @@ p2.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new P(userid);
+		new P("P",userid);
 		
 		fr.setVisible(false);
 		
@@ -201,7 +209,7 @@ p3.addMouseListener(new MouseListener() {
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		new V(userid);
+		new V("V",userid);
 		fr.setVisible(false);
 		
 	}
