@@ -16,7 +16,7 @@ public class Home extends JFrame {
 	
 	JLabel a;
 	JLabel p1,p2,p3;
-	JLabel l1,l2,l3,l4;
+	JLabel l1,l2,l3,l4,l5;
 	JButton btnlog;
 	ImageIcon i1;
 
@@ -80,6 +80,13 @@ public class Home extends JFrame {
     btnlog.setFont(new Font("세방고딕", Font.BOLD, 20));
     btnlog.setFocusPainted(false);
     
+    l4 = new JLabel("<html>주식회사 부신사 (BUSINSA Co., Ltd.)<br>"
+    		+ "부산광역시 부산진구 중앙대로 749 426호<br>"
+    		+ "업체등록문의 051-912-1000</html>");
+    l4.setFont(new Font("세방고딕", Font.PLAIN, 12));
+    l4.setBounds(1200,680,300,150);
+    
+    
     fr.getContentPane().add(a);
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
@@ -88,6 +95,7 @@ public class Home extends JFrame {
     fr.getContentPane().add(l1);
     fr.getContentPane().add(l2);
     fr.getContentPane().add(l3);
+    fr.getContentPane().add(l4);
     fr.getContentPane().add(btnlog);
     
     fr.setVisible(true);

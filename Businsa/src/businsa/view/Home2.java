@@ -14,7 +14,7 @@ import businsa.model.MemberDao;
 public class Home2 extends JFrame {
 	
 	JLabel a,p1,p2,p3;
-	JLabel l1,l2,l3,l4;
+	JLabel l1,l2,l3,l4,l5;
 	static String userid;
 	static String b;
 	ImageIcon i1;
@@ -29,7 +29,7 @@ public class Home2 extends JFrame {
 	
 	fr.getContentPane().setLayout(null);
 	
-    fr.setSize(1450, 800);
+    fr.setSize(1450, 830);
     fr.setLocationRelativeTo(null);
     fr.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     fr.getContentPane().setBackground(Color.WHITE);
@@ -75,6 +75,12 @@ public class Home2 extends JFrame {
     l4.setBounds(670,650,200,50);
     l4.setFont(new Font("세방고딕", Font.BOLD, 15));
     
+    l5 = new JLabel("<html>주식회사 부신사 (BUSINSA Co., Ltd.)<br>"
+    		+ "부산광역시 부산진구 중앙대로 749 426호<br>"
+    		+ "업체등록문의 051-912-1000</html>");
+    l5.setFont(new Font("세방고딕", Font.PLAIN, 12));
+    l5.setBounds(1200,680,300,150);
+    
     fr.getContentPane().add(a);
     fr.getContentPane().add(p1);
     fr.getContentPane().add(p2);
@@ -84,6 +90,7 @@ public class Home2 extends JFrame {
     fr.getContentPane().add(l2);
     fr.getContentPane().add(l3);
     fr.getContentPane().add(l4);
+    fr.getContentPane().add(l5);
     
     fr.setVisible(true);
     

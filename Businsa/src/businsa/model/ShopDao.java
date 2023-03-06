@@ -62,10 +62,7 @@ public  class ShopDao {
 
 		return shopList;
 	}
-	
-	
-	
-	
+
 	// SHOP 이미지 불러오기 (Bose_shop)
 	public ArrayList<ShopVO> getShopimageList(String shopcode) {
 		ArrayList<ShopVO> shopimageList = new ArrayList<ShopVO>();

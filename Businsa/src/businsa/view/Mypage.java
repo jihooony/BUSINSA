@@ -121,7 +121,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		c.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(c);
 		addr = new JLabel();
-		addr.setBounds(100, 40, 100, 30);
+		addr.setBounds(100, 40, 400, 30);
 		addr.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(addr);
 		
@@ -139,7 +139,7 @@ public class Mypage extends JFrame implements KeyListener, ActionListener {
 		e.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(e);
 		joinDate = new JLabel();
-		joinDate.setBounds(100, 80, 200, 30);
+		joinDate.setBounds(100, 80, 500, 30);
 		joinDate.setFont(new Font("세방고딕", Font.PLAIN, 12));
 		pa.add(joinDate);
 

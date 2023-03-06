@@ -153,10 +153,6 @@ public class Businsaclothb {
 			}
 		});
 		
-		JLabel id = new JLabel(userid+"님환영합니다");
-		id.setBounds(90, 10, 105, 37);
-		frame.add(id);
-		
 		backbtn.addActionListener(new ActionListener() {
 			
 			@Override
