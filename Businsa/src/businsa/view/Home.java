@@ -59,6 +59,7 @@ public class Home extends JFrame {
       
     l1 = new JLabel(" 보세 ");
     l1.setBounds(250,600,150,50);
+    
     l1.setFont(new Font("세방고딕", Font.BOLD, 15));
     l1.setForeground(Color.BLACK);
 

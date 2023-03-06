@@ -117,7 +117,7 @@ public class P extends JFrame{
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							new Businsaclothb(userid);
+							new Businsa_clothes_P("P",userid);
 							setVisible(false);
 
 						}

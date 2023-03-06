@@ -25,13 +25,14 @@ public class Businsaclothb {
     JFrame frame;
 	JTextField adulttxt;
 	static 	String userid;
+	static 	String B;
 			Buylist BuyList = null;
 	static 	LoginWindow b 	= null;
 	public static void main(String[] args) {
-         new Businsaclothb(userid);		
+         new Businsaclothb(B,userid);		
 	}
 
-	public Businsaclothb(String userid) {
+	public Businsaclothb(String B,String userid) {
 		this.userid = userid;
 		initialize();
 		

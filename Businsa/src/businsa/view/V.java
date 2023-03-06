@@ -116,7 +116,7 @@ public class V extends JFrame{
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							JoinScreen frame = new JoinScreen(); // 일단 이거 임의로 joinScreen 클래스로 넘어가도록 설정
+							new Businsa_clothes_V("V",userid); // 일단 이거 임의로 joinScreen 클래스로 넘어가도록 설정
 							setVisible(false);
 
 						}
